@@ -59,7 +59,7 @@ class Queue:
 def state_table(lam, mu, server):  # Not tested yet
     """Realisation of Queue.state_table() as a function."""
     if not isinstance(server, int):
-        raise ValueError('server must be integer')
+        raise TypeError('server must be integer')
     return {i: ((lam/mu)**i/math.factorial(i)) *
                 (sum([(lam/mu)**x/math.factorial(x) for x in range(server + 1)]))**-1
             for i in range(server+1)}
