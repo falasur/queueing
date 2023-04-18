@@ -5,8 +5,8 @@ from scipy import stats
 
 class Queue:
     def __init__(self, lam, mu, server):
-        if not (isinstance(lam, float) and isinstance(mu, float)):
-            raise TypeError('lam, mu must be floats')
+        if not (isinstance(lam, (float,int)) and isinstance(mu, (float, int))):
+            raise TypeError('lam, mu must be floats or integer')
         elif not isinstance(server, int):
             raise TypeError('Number of servers must be an integer')
         # Arrival flow intensity;
